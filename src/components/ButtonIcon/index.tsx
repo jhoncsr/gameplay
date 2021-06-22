@@ -1,23 +1,24 @@
 import React from 'react'
-import { 
-    Text, 
+import {
+    Text,
     Image,
     TouchableOpacity,
     TouchableOpacityProps,
-    View } from 'react-native'
+    View
+} from 'react-native'
 
 import DiscordImg from '../../assets/SignIn/discord.png';
-import {styles} from './styles';
+import { styles } from './styles';
 
-type Props  = TouchableOpacityProps & {
+type Props = TouchableOpacityProps & {
     title: string;
 }
 
-export function ButtonIcon({ title, ...rest }){
-    return(
+export function ButtonIcon({ title, ...rest }) {
+    return (
         <TouchableOpacity style={styles.container} {...rest}>
             <View style={styles.iconWrapper}>
-                <Image source={DiscordImg} style={styles.icon}/>
+                <Image source={DiscordImg} style={styles.icon} />
             </View>
             <Text style={styles.title}>
                 {title}

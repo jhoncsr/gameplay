@@ -3,39 +3,33 @@ import {
     Text,
     View,
     Image,
-    StatusBar,
 } from 'react-native';
 import IllustrationImg from '../../assets/SignIn/illustration.png';
-import { ButtonIcon } from '../../components/ButtonIcon';
 import {styles} from './styles';
+import {ButtonIcon} from '../../components/ButtonIcon'
 
 export function SignIn() {
+    const [text, setText] = useState('');
         return (
             <View style= {styles.container}>
-                <StatusBar
-                barStyle="light-content"
-                backgroundColor="transparent"
-                translucent
-                />
                 <Image 
                 source={IllustrationImg}
                 style = {styles.image}
-                resizeMode = "stretch"
                 />
             <View style = {styles.content}>
                 <Text style={styles.title}>
-                    Organize {`\n`}
-                    suas Jogatinas{`\n`}
-                    Facilmente
+                    Conecte-se {`\n`}
+                    e organize suas {`\n`}
+                    Jogatinas
                 </Text>
                 <Text style={styles.subtitle}>
-                Crie grupos para jogar seus games{`\n`}
-                favoritos com seus amigos
+                    Crie grupos para jogar com seus games {`\n`}
+                    favoritos com seus amigos
+                   
                 </Text>
-                <ButtonIcon 
+                <ButtonIcon
                 title= "Entrar com Discord"
-                activeOpacity={0.7}
-                />
+                activeOpacity= {0.7}/>
             </View>
             </View>
 
