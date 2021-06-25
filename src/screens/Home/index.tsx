@@ -16,7 +16,7 @@ export function Home() {
 
             </View>
         <View>
-            <CategorySelect categorySelected={'1'}/>
+            <CategorySelect categorySelected/>
         </View>
         </View>
     )

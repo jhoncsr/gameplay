@@ -8,7 +8,10 @@ import { Category } from '../Category';
 
 type Props = {
     categorySelected: string
+    
 }
+
+
 
 export function CategorySelect({ categorySelected }: Props) {
 
