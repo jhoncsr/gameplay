@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { View, FlatList,Text } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 import { styles } from './styles';
 
 import { ButtonAdd } from '../../components/ButtonAdd';
 import { CategorySelect } from '../../components/CategorySelect'
 import { Profile } from '../../components/profile'
 import { ListHeader } from '../../components/ListHeader'
-import { Inter_500Medium } from '@expo-google-fonts/inter';
+import { Appointment } from '../../components/Appointment'
+import { ListDivider } from '../../components/ListDivider';
 
 
 export function Home() {
@@ -22,7 +23,19 @@ export function Home() {
             },
             category: '1',
             date: '22/06 as 20:40',
-            descrption: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+            description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+        },
+        {
+            id: '2',
+            guild: {
+                id: '2',
+                name: 'Lendarios',
+                icon: null,
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20:40',
+            description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
         }
     ]
 
@@ -36,7 +49,6 @@ export function Home() {
                 <ButtonAdd />
 
             </View>
-            <View>
                 <CategorySelect
                     categorySelected={category}
                     setCategory={handleCategorySelect} />
@@ -46,14 +58,17 @@ export function Home() {
                         subtitle="Total 6"
                     />
                     <FlatList
-                    data={appointments}
-                    keyExtractor={item=>item.id}
-                    renderItem={({item})=>(
-                        <Text>{item.guild.name}</Text>
-                    )}
+                        data={appointments}
+                        keyExtractor={item => item.id}
+                        renderItem={({ item }) => (
+                            <Appointment data={item} />
+
+                        )}
+                        ItemSeparatorComponent={() => <ListDivider/>}
+                        style={styles.matches}
+                        showsVerticalScrollIndicator={false}
                     />
 
-                </View>
             </View>
         </View>
     )
