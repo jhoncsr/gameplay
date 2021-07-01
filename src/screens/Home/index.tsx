@@ -8,7 +8,7 @@ import { Profile } from '../../components/profile'
 import { ListHeader } from '../../components/ListHeader'
 import { Appointment } from '../../components/Appointment'
 import { ListDivider } from '../../components/ListDivider';
-
+import { Background } from '../../components/Background';
 
 export function Home() {
     const [category, setCategory] = useState('');
@@ -43,7 +43,7 @@ export function Home() {
         categoryId === category ? setCategory('') : setCategory(categoryId);
     }
     return (
-        <View>
+        <Background>
             <View style={styles.header}>
                 <Profile />
                 <ButtonAdd />
@@ -51,7 +51,8 @@ export function Home() {
             </View>
                 <CategorySelect
                     categorySelected={category}
-                    setCategory={handleCategorySelect} />
+                    setCategory={handleCategorySelect} 
+                    />
                 <View style={styles.content}>
                     <ListHeader
                         title="Partidas Agendadas"
@@ -70,7 +71,7 @@ export function Home() {
                     />
 
             </View>
-        </View>
+        </Background>
     )
 
 }

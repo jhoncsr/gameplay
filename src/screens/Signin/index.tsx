@@ -7,7 +7,7 @@ import {
 import IllustrationImg from '../../assets/SignIn/illustration.png';
 import { styles } from './styles';
 import { ButtonIcon } from '../../components/ButtonIcon'
-
+import { Background } from '../../components/Background';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -22,6 +22,7 @@ export function SignIn() {
 
     const [text, setText] = useState('');
     return (
+        <Background>
         <View style={styles.container}>
             <Image
                 source={IllustrationImg}
@@ -42,7 +43,8 @@ export function SignIn() {
                     title="Entrar com Discord"
                     onPress={handleSignIn}/>
             </View>
+           
         </View>
-
+        </Background>
     )
 }
