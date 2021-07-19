@@ -6,7 +6,9 @@ export function AppointmentDetails() {
 
     return (
         <Background>
+            <Header>
 
+            </Header>
         </Background>
 
 
